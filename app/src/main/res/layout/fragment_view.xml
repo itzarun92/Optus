@@ -1,0 +1,21 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="#ff0fff"
+    android:orientation="vertical">
+
+    <TextView style="?android:textAppearanceMedium"
+        android:id="@+id/fragmentTextView"
+        android:padding="16dp"
+        android:textStyle="bold"
+        android:lineSpacingMultiplier="1.2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fragment" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="swipe to change fragment"/>
+</LinearLayout>

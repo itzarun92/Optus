@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Optus</string>
+    <string name="title_scenario_menu">Optus</string>
+    <string name="title_activity_maps">Driving and Train Route</string>
+    <string name="title_activity_maps_details">Search Location</string>
+    <string name="title_activity_widgets">Widgets</string>
+    <string name="btn_scenario1">Widgets</string>
+    <string name="btn_scenario2">Map</string>
+    <string name="btn_navigate">Navigate</string>
+    <string name="tv_driving">Driving </string>
+    <string name="tv_train">Train </string>
+
+</resources>

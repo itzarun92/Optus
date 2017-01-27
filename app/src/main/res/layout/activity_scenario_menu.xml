@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable name="presenter" type="com.arun.optus.Bindings.ScenarioMenuBinding"/>
+
+    </data>
+<LinearLayout
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent" android:gravity="center"
     android:padding="40dp">
@@ -8,12 +13,14 @@
         android:id="@+id/btn_scenario1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/btn_scenario1"/>
+        android:text="@string/btn_scenario1"
+        android:onClick="@{(theView) -> presenter.onClickHandler(theView)}"/>
     <Button
         android:id="@+id/btn_scenario2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/btn_scenario2"
+        android:onClick="@{(theView) -> presenter.onClickHandler(theView)}"
         android:layout_marginTop="50dp"/>
 
-</LinearLayout>
+</LinearLayout></layout>

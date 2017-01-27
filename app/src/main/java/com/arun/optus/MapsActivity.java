@@ -1,9 +1,8 @@
 package com.arun.optus;
 
 import android.graphics.Color;
-import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v4.app.FragmentActivity;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -11,7 +10,6 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
-import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
 import com.google.maps.android.PolyUtil;
@@ -22,14 +20,11 @@ import java.util.List;
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-private String TAG="MapsActivity";
     List<LatLng> drivingPoints=null,trainPoints=null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
-        Log.d(TAG, "drivingPolyline: "+getIntent().getExtras().getString("drivingPolyline"));
-        Log.d(TAG, "trainPolyline: "+getIntent().getExtras().getString("trainPolyline"));
         if(getIntent().getExtras().getString("drivingPolyline")!=null){
              drivingPoints=PolyUtil.decode(getIntent().getExtras().getString("drivingPolyline"));
         }

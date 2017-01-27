@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+
+        <variable name="presenter" type="com.arun.optus.Bindings.WidgetsBinding"/>
+
+    </data>
+<LinearLayout
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="11">
@@ -21,12 +27,14 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="4"
-        android:gravity="center">
+        android:gravity="center"
+        android:background='@{presenter.selectedBgColor.equals("red")?@drawable/redBg:presenter.selectedBgColor.equals("blue")?@drawable/blueBg:presenter.selectedBgColor.equals("green")?@drawable/greenBg:null}'
+       >
         <TextView
             android:id="@+id/selectedItem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nothing"/>
+            android:text="@{presenter.selectedItem}"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -43,18 +51,21 @@
             android:id="@+id/blueBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Blue"/>
+            android:text="Blue"
+            android:onClick="@{(theView) -> presenter.onClickHandler(theView)}"/>
         <Button
             android:id="@+id/redBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Red"
+            android:onClick="@{(theView) -> presenter.onClickHandler(theView)}"
             android:layout_marginLeft="20dp"/>
         <Button
             android:id="@+id/greenBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Green"
+            android:onClick="@{(theView) -> presenter.onClickHandler(theView)}"
             android:layout_marginLeft="20dp"/>
         </LinearLayout>
-</LinearLayout>
+</LinearLayout></layout>

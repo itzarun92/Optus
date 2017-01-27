@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+<import type="android.view.View"/>
+        <variable name="presenter" type="com.arun.optus.Bindings.MapDetailsBinding"/>
+
+    </data>
+<LinearLayout
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="40dp">
@@ -28,13 +34,15 @@
             android:text="@string/tv_driving"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:layout_marginRight="5dp"/>
+            android:layout_marginRight="5dp"
+            android:visibility="@{presenter.enableNavigation ? View.VISIBLE : View.GONE}"/>
         <TextView
             android:id="@+id/drivingTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="16sp"
-            android:textColor="@android:color/holo_blue_light"/>
+            android:textColor="@android:color/holo_blue_light"
+            android:text="@{presenter.drivingTime}"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="wrap_content"
@@ -47,13 +55,15 @@
             android:text="@string/tv_train"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:layout_marginRight="5dp"/>
+            android:layout_marginRight="5dp"
+            android:visibility="@{presenter.enableNavigation ? View.VISIBLE : View.GONE}"/>
         <TextView
             android:id="@+id/trainTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="16sp"
-            android:textColor="@android:color/holo_red_light"/>
+            android:textColor="@android:color/holo_red_light"
+            android:text="@{presenter.trainTime}"/>
     </LinearLayout>
 
     <Button
@@ -61,6 +71,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/btn_navigate"
-        android:layout_marginTop="30dp"/>
+        android:layout_marginTop="30dp"
+        android:onClick="@{(theView) -> presenter.onClickHandler(theView)}"
+        android:enabled="@{presenter.enableNavigation ?true:false}"
+        />
 
-</LinearLayout>
+</LinearLayout></layout>

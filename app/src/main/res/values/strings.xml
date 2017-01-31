@@ -21,7 +21,8 @@
     <string name="ok_const">OK</string>
     <string name="fragment_no_const">"Fragment #" </string>
     <!--Messages-->
-    <string name="initial_selected_item_msg">Nothing</string>
+    <string name="initial_selected_item_msg">Nothing </string>
+    <string name="initial_selected_item_msg2">&#160;is selected</string>
     <string name="route_not_available_msg">Route not available</string>
     <string name="fragment_msg">swipe to change fragment</string>
     <string name="error_msg">An error occurred: </string>
@@ -41,4 +42,6 @@
         <item>Item 11</item>
         <item>Item 12</item>
     </string-array>
+    
+    <integer name="map_camera_zoom">48</integer>
 </resources>

@@ -91,7 +91,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             LatLngBounds.Builder builder = new LatLngBounds.Builder();
             builder.include(new LatLng(maxLat, maxLon));
             builder.include(new LatLng(minLat, minLon));
-            mMap.moveCamera(CameraUpdateFactory.newLatLngBounds(builder.build(), 48));
+            mMap.moveCamera(CameraUpdateFactory.newLatLngBounds(builder.build(), getResources().getInteger(R.integer.map_camera_zoom)));
         }
 
     }

@@ -1,9 +1,5 @@
 package com.arun.optus.DistanceMatrixModel;
 
-/**
- * Created by root on 17/1/17.
- */
-
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 

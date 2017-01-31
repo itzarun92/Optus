@@ -13,9 +13,9 @@
         android:lineSpacingMultiplier="1.2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Fragment" />
+        android:text="@string/tv_fragment" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="swipe to change fragment"/>
+        android:text="@string/fragment_msg"/>
 </LinearLayout>

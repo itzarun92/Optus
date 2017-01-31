@@ -9,6 +9,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,11 +18,9 @@ import android.widget.TextView;
 import com.arun.optus.Bindings.WidgetsBinding;
 import com.arun.optus.databinding.ActivityWidgetsBinding;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
-
-/**
- * Created by root on 16/1/17.
- */
 
 public class WidgetsActivity extends AppCompatActivity{
 
@@ -38,9 +37,7 @@ public class WidgetsActivity extends AppCompatActivity{
         widgetsModel = new WidgetsBinding(WidgetsActivity.this);
         binding.setPresenter(widgetsModel);
         horizontal_recycler_view= (RecyclerView) findViewById(R.id.horizontal_recycler_view);
-
-
-        horizontalAdapter=new HorizontalAdapter(widgetsModel.getRecyclerItemList());
+        horizontalAdapter=new HorizontalAdapter(new ArrayList(Arrays.asList(getResources().getStringArray(R.array.horizontal_scrollview_data))));
         LinearLayoutManager horizontalLayoutManagaer
                 = new LinearLayoutManager(WidgetsActivity.this, LinearLayoutManager.HORIZONTAL, false);
         horizontal_recycler_view.setLayoutManager(horizontalLayoutManagaer);

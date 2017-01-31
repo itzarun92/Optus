@@ -1,4 +1,6 @@
 <resources>
+
+    <!--Titles-->
     <string name="app_name">Optus</string>
     <string name="title_scenario_menu">Optus</string>
     <string name="title_activity_maps">Driving and Train Route</string>
@@ -9,5 +11,34 @@
     <string name="btn_navigate">Navigate</string>
     <string name="tv_driving">Driving </string>
     <string name="tv_train">Train </string>
+    <string name="tv_fragment">Fragment</string>
+    <string name="btn_red">Red </string>
+    <string name="btn_blue">Blue </string>
+    <string name="btn_green">Green </string>
 
+    <!--Constants-->
+    <string name="place_id_const">place_id:</string>
+    <string name="ok_const">OK</string>
+    <string name="fragment_no_const">"Fragment #" </string>
+    <!--Messages-->
+    <string name="initial_selected_item_msg">Nothing</string>
+    <string name="route_not_available_msg">Route not available</string>
+    <string name="fragment_msg">swipe to change fragment</string>
+    <string name="error_msg">An error occurred: </string>
+
+    <!--Static data for horizontal scrollview-->
+    <string-array name="horizontal_scrollview_data">
+        <item>Item 1</item>
+        <item>Item 2</item>
+        <item>Item 3</item>
+        <item>Item 4</item>
+        <item>Item 5</item>
+        <item>Item 6</item>
+        <item>Item 7</item>
+        <item>Item 8</item>
+        <item>Item 9</item>
+        <item>Item 10</item>
+        <item>Item 11</item>
+        <item>Item 12</item>
+    </string-array>
 </resources>

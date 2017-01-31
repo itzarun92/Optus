@@ -51,20 +51,20 @@
             android:id="@+id/blueBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Blue"
+            android:text="@string/btn_blue"
             android:onClick="@{(theView) -> presenter.onClickHandler(theView)}"/>
         <Button
             android:id="@+id/redBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Red"
+            android:text="@string/btn_red"
             android:onClick="@{(theView) -> presenter.onClickHandler(theView)}"
             android:layout_marginLeft="20dp"/>
         <Button
             android:id="@+id/greenBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Green"
+            android:text="@string/btn_green"
             android:onClick="@{(theView) -> presenter.onClickHandler(theView)}"
             android:layout_marginLeft="20dp"/>
         </LinearLayout>

@@ -8,10 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-/**
- * Created by root on 17/1/17.
- */
-
 public class PagerFragment extends Fragment {
     private int position;
     @Override
@@ -26,7 +22,7 @@ public class PagerFragment extends Fragment {
         ViewGroup rootView = (ViewGroup) inflater.inflate(
                 R.layout.fragment_view, container, false);
         View tv = rootView.findViewById(R.id.fragmentTextView);
-        ((TextView)tv).setText("Fragment #" +( position+1));
+        ((TextView)tv).setText(getResources().getString(R.string.fragment_no_const)+( position+1));
         return rootView;
     }
 }

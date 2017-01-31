@@ -9,10 +9,6 @@ import com.arun.optus.MapDetailsActivity;
 import com.arun.optus.R;
 import com.arun.optus.WidgetsActivity;
 
-/**
- * Created by root on 27/1/17.
- */
-
 public class ScenarioMenuBinding extends BaseObservable {
 
     Context context;

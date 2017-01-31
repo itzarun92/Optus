@@ -19,10 +19,6 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-/**
- * Created by root on 16/1/17.
- */
-
 public class MapDetailsActivity extends AppCompatActivity{
     private Place fromPlace=null,toPlace=null;
     public String TAG="Map Details";
@@ -49,7 +45,7 @@ public class MapDetailsActivity extends AppCompatActivity{
             @Override
             public void onError(Status status) {
                 // TODO: Handle the error.
-                Log.i(TAG, "An error occurred: " + status);
+                Log.i(TAG, getResources().getString(R.string.error_msg) + status);
             }
         });
         PlaceAutocompleteFragment toLocation = (PlaceAutocompleteFragment)
@@ -67,7 +63,7 @@ public class MapDetailsActivity extends AppCompatActivity{
             @Override
             public void onError(Status status) {
                 // TODO: Handle the error.
-                Log.i(TAG, "An error occurred: " + status);
+                Log.i(TAG, getResources().getString(R.string.error_msg) + status);
             }
 
         });
@@ -79,15 +75,15 @@ public class MapDetailsActivity extends AppCompatActivity{
         DistanceInterface api = ApiClient.getClient().create(DistanceInterface.class);
 
 
-         api.getDrivingTimings("place_id:"+fromPlace.getId(),"place_id:"+toPlace.getId()).enqueue(new Callback<DistanceMatrix>() {
+         api.getDrivingTimings(getResources().getString(R.string.place_id_const)+fromPlace.getId(),getResources().getString(R.string.place_id_const)+toPlace.getId()).enqueue(new Callback<DistanceMatrix>() {
             @Override
             public void onResponse(Call<DistanceMatrix> call, Response<DistanceMatrix> response) {
                 DistanceMatrix distanceMatrix = response.body();
-                if(distanceMatrix.getStatus().equalsIgnoreCase("OK") && distanceMatrix.getRoutes().size()>0 && distanceMatrix.getRoutes().get(0).getLegs().size()>0) {
+                if(distanceMatrix.getStatus().equalsIgnoreCase(getResources().getString(R.string.ok_const)) && distanceMatrix.getRoutes().size()>0 && distanceMatrix.getRoutes().get(0).getLegs().size()>0) {
                     mapDetailsModel.setDrivingTime( distanceMatrix.getRoutes().get(0).getLegs().get(0).getDuration().getText()+" ("+ distanceMatrix.getRoutes().get(0).getLegs().get(0).getDistance().getText()+")");
                     mapDetailsModel.setDrivingPolyline(distanceMatrix.getRoutes().get(0).getOverviewPolyline().getPoints());
                 }else{
-                    mapDetailsModel.setDrivingTime("Route not available");
+                    mapDetailsModel.setDrivingTime(getResources().getString(R.string.route_not_available_msg));
                     mapDetailsModel.setDrivingPolyline(null);
                 }
             }
@@ -98,15 +94,15 @@ public class MapDetailsActivity extends AppCompatActivity{
                 Log.e(TAG, t.toString());
             }
         });
-        api.getTrainTimings("place_id:"+fromPlace.getId(),"place_id:"+toPlace.getId()).enqueue(new Callback<DistanceMatrix>() {
+        api.getTrainTimings(getResources().getString(R.string.place_id_const)+fromPlace.getId(),getResources().getString(R.string.place_id_const)+toPlace.getId()).enqueue(new Callback<DistanceMatrix>() {
             @Override
             public void onResponse(Call<DistanceMatrix> call, Response<DistanceMatrix> response) {
                 DistanceMatrix distanceMatrix = response.body();
-                if(distanceMatrix.getStatus().equalsIgnoreCase("OK") && distanceMatrix.getRoutes().size()>0 && distanceMatrix.getRoutes().get(0).getLegs().size()>0) {
+                if(distanceMatrix.getStatus().equalsIgnoreCase(getResources().getString(R.string.ok_const)) && distanceMatrix.getRoutes().size()>0 && distanceMatrix.getRoutes().get(0).getLegs().size()>0) {
                     mapDetailsModel.setTrainTime( distanceMatrix.getRoutes().get(0).getLegs().get(0).getDuration().getText()+" ("+ distanceMatrix.getRoutes().get(0).getLegs().get(0).getDistance().getText()+")");
                     mapDetailsModel.setTrainPolyline(distanceMatrix.getRoutes().get(0).getOverviewPolyline().getPoints());
                 }else{
-                    mapDetailsModel.setTrainTime("Route not available");
+                    mapDetailsModel.setTrainTime(getResources().getString(R.string.route_not_available_msg));
                     mapDetailsModel.setTrainPolyline(null);
                 }
             }

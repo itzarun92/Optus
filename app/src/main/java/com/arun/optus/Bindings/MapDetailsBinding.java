@@ -10,10 +10,6 @@ import com.android.databinding.library.baseAdapters.BR;
 import com.arun.optus.MapsActivity;
 import com.arun.optus.R;
 
-/**
- * Created by root on 28/1/17.
- */
-
 public class MapDetailsBinding extends BaseObservable {
     private Context context;
     public MapDetailsBinding(Context context)
